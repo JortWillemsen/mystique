@@ -1,0 +1,15 @@
+{
+  "testEnvironment": "node",
+  "moduleFileExtensions": ["js", "jsx"],
+  "coverageReporters": ["json", "lcov", "text", "html"],
+  "coveragePathIgnorePatterns": ["/src/wrappers/", "/tests/"],
+  "coverageThreshold": {
+    "global": {
+      "branches": 85,
+      "functions": 85,
+      "lines": 85,
+      "statements": 85
+    }
+  },
+  "verbose": true
+}

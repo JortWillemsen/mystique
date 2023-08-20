@@ -1,0 +1,46 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- master
+
+pool:
+  vmImage: windows-2022
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '18.4.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    cd mystique
+    npm install
+  displayName: 'Installing project'
+
+- script: |
+    cd mystique
+    npx prettier --write .
+  displayName: 'Running Prettier'
+
+- script: |
+    cd mystique
+    npx prettier --check .
+  displayName: 'Verifying Prettier check'
+
+- script: |
+    cd mystique
+    npm run compile
+  displayName: 'Compiling TypeScript'
+
+- script: |
+    cd mystique/tests/assets
+    npm install
+  displayName: 'Installing testing dependencies'
+
+- script: |
+    cd mystique
+    npm test
+  displayName: 'Running tests'

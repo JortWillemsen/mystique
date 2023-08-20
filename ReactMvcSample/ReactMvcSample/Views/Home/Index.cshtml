@@ -1,0 +1,23 @@
+﻿@using React.RenderFunctions
+@using React.AspNet
+@{
+    Layout = null;
+    var reactJssFunctions = new ReactJssFunctions();
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hello React</title>
+</head>
+<body>
+<div id="content">
+    @Html.React("Components.Button",  new
+    {
+        text = "Hi React in ASP.NET!"
+    }, renderFunctions: new ChainedRenderFunctions(reactJssFunctions))
+</div>
+</body>
+</html>
+
+
+@Html.ReactInitJavaScript()

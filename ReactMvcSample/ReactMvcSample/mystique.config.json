@@ -1,0 +1,33 @@
+{
+  "storybookUrl": "http://localhost:6006",
+  "components": [
+    {
+      "name": "Button",
+      "tests": [
+        {
+          "name": "Background color should be red",
+          "selector": ".background",
+          "property": "background-color",
+          "value": "rgb(255,0,0)"
+        },
+        {
+          "name": "Ruby align should be center",
+          "selector": ".ruby",
+          "property": "ruby-align",
+          "value": "center"
+        }
+      ]
+    },
+    {
+      "name": "Application-title",
+      "tests": [
+        {
+          "name": "Font family should be Impact",
+          "selector": ".title",
+          "property": "font-family",
+          "value": "Impact"
+        }
+      ]
+    }
+  ]
+}
