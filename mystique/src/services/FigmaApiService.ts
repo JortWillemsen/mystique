@@ -81,7 +81,6 @@ export class FigmaApiService {
 
   async generateTestsForFile(file: FigmaFile): Promise<MystiqueTest[]> {
     const tests = this.figmaFileHelper.findTests(file);
-    console.log(tests);
     
     return tests;
   }
